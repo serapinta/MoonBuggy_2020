@@ -8,6 +8,8 @@ namespace MoonBuggy_2020
     {
         static void Main(string[] args)
         {
+            Menu menu = new Menu();
+            menu.DrawIntro();
         }
     }
 }

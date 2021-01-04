@@ -32,7 +32,8 @@ namespace MoonBuggy_2020
                 Console.WriteLine("\t\t\t  BBBBBB   U     U  G        G          Y Y");
                 Console.WriteLine("\t\t\t  B     B  U     U   G   GGG  G   GGG    Y");
                 Console.WriteLine("\t\t\t  BBBBBB    UUUUU     GGGGG    GGGGG   YY");
-                Console.WriteLine("\t\t\t\tPress Entre");
+                Console.WriteLine("\n");
+                Console.WriteLine("\t\t\t\tPress Enter");
             } while (Console.ReadKey().Key != ConsoleKey.Enter);
             DrawMenu();
         }
@@ -46,7 +47,6 @@ namespace MoonBuggy_2020
             Console.WriteLine("  3. HIGHSCORE");
             Console.WriteLine("  4. CREDITS");
             Console.WriteLine("  5. EXIT");
-            Console.WriteLine();
             Console.WriteLine(" ╚ ============== ╝");
         }
 
@@ -73,10 +73,7 @@ namespace MoonBuggy_2020
             {
                 Environment.Exit(0);
             }
-            else
-            {
                 DrawMenu();
-            }
         }
 
         private void Instructions()
@@ -92,7 +89,7 @@ namespace MoonBuggy_2020
                 Console.WriteLine("   ");
                 Console.WriteLine("  RETURN (Press Enter)");
                 Console.WriteLine();
-                Console.WriteLine(" ╚ ============== ╝");
+                Console.WriteLine(" ╚ ====================== ╝");
             } while (Console.ReadKey().Key != ConsoleKey.Enter);
 
         }
@@ -107,7 +104,7 @@ namespace MoonBuggy_2020
                 Console.WriteLine("   ");
                 Console.WriteLine("  RETURN (Press Enter)");
                 Console.WriteLine();
-                Console.WriteLine(" ╚ ============== ╝");
+                Console.WriteLine(" ╚ =================== ╝");
             } while (Console.ReadKey().Key != ConsoleKey.Enter);
 
 
@@ -127,7 +124,7 @@ namespace MoonBuggy_2020
                 Console.WriteLine();
                 Console.WriteLine("  RETURN (Press Enter)");
                 Console.WriteLine();
-                Console.WriteLine(" ╚ ============== ╝");
+                Console.WriteLine(" ╚ ================ ╝");
             } while (Console.ReadKey().Key != ConsoleKey.Enter);
         }
 
