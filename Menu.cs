@@ -2,8 +2,14 @@ using System;
 
 namespace MoonBuggy_2020
 {
+    /// <summary>
+    /// Class draws the Intro and the Menu of the game
+    /// </summary>
     public class Menu
     {
+        /// <summary>
+        /// Method that draws the Intro of the game
+        /// </summary>
         public void DrawIntro()
         {
             do
@@ -37,6 +43,9 @@ namespace MoonBuggy_2020
             } while (Console.ReadKey().Key != ConsoleKey.Enter);
             DrawMenu();
         }
+        /// <summary>
+        /// Method to draw the Menu
+        /// </summary>
         private void DrawMenu()
         {
             Console.Clear();
@@ -48,8 +57,14 @@ namespace MoonBuggy_2020
             Console.WriteLine("  4. CREDITS");
             Console.WriteLine("  5. EXIT");
             Console.WriteLine(" ╚ ============== ╝");
+
+            MenuInput(Console.ReadKey().Key);
         }
 
+        /// <summary>
+        /// Method to give the input for the DrawMenu method
+        /// </summary>
+        /// <param name="key">Input for the pressed keys</param>
         private void MenuInput(ConsoleKey key)
         {
             // Start the game
@@ -73,9 +88,12 @@ namespace MoonBuggy_2020
             {
                 Environment.Exit(0);
             }
-                DrawMenu();
+            DrawMenu();
         }
 
+        /// <summary>
+        /// Method to give the information about the game
+        /// </summary>
         private void Instructions()
         {
             do
@@ -94,6 +112,9 @@ namespace MoonBuggy_2020
 
         }
 
+        /// <summary>
+        /// Method to give the best values of each game
+        /// </summary>
         private void Scores()
         {
             do
@@ -110,6 +131,9 @@ namespace MoonBuggy_2020
 
         }
 
+        /// <summary>
+        /// Method to give the information of who made the project
+        /// </summary>
         private void Credits()
         {
             do
@@ -130,21 +154,21 @@ namespace MoonBuggy_2020
 
     }
 }
-      
- /* // ╔ ═ ═ ╗
-          // ╚  ═  ╝
-        
-        //CARRO ANDAR
-        Console.WriteLine("  .-`---`-_   - - - ♦");
-            Console.WriteLine("  '=0===0=-'");
 
-            //CARRO PARADO
-            Console.WriteLine("  .-`---`-_   - - -");
-            Console.WriteLine("  '=O===O=-'");
+/* // ╔ ═ ═ ╗
+     // ╚  ═  ╝
 
-            //CHAO / SPIKES
-            Console.WriteLine(" ========▲▲▲===");
-            Console.WriteLine(" ==============");
+   //CARRO ANDAR
+   Console.WriteLine("  .-`---`-_   - - - ♦");
+       Console.WriteLine("  '=0===0=-'");
 
-            //INIMIGO alt + pad4 ♦
-            Console.WriteLine("♦");*/
+       //CARRO PARADO
+       Console.WriteLine("  .-`---`-_   - - -");
+       Console.WriteLine("  '=O===O=-'");
+
+       //CHAO / SPIKES
+       Console.WriteLine(" ========▲▲▲===");
+       Console.WriteLine(" ==============");
+
+       //INIMIGO alt + pad4 ♦
+       Console.WriteLine("♦");*/
