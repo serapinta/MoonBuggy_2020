@@ -8,7 +8,7 @@
 using System;
 using CoreGameEngine;
 
-namespace Basic
+namespace MoonBuggy_2020
 {
     // A script which controls the player, implemented as a component
     public class Player : Component

@@ -8,7 +8,7 @@
 using System;
 using CoreGameEngine;
 
-namespace Basic
+namespace MoonBuggy_2020
 {
     // Simple component which listens for the escape key and terminates the
     // parent scene

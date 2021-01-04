@@ -9,7 +9,7 @@ using System;
 using System.Collections.Generic;
 using CoreGameEngine;
 
-namespace Basic
+namespace MoonBuggy_2020
 {
     class Game
     {
@@ -69,7 +69,7 @@ namespace Basic
                 ConsoleKey.RightArrow,
                 ConsoleKey.LeftArrow});
             player.AddComponent(playerKeyListener);
-            Position playerPos = new Position(10f, 10f, 0f);
+            Position playerPos = new Position(150f, 25f, 0f);
             player.AddComponent(playerPos);
             player.AddComponent(new Player());
             player.AddComponent(new ConsoleSprite(
@@ -79,7 +79,7 @@ namespace Basic
             // Create walls
             GameObject walls = new GameObject("Walls");
             ConsolePixel wallPixel = new ConsolePixel(
-                '#', ConsoleColor.Blue, ConsoleColor.White);
+                '#', ConsoleColor.Blue,ConsoleColor.White);
             Dictionary<Vector2, ConsolePixel> wallPixels =
                 new Dictionary<Vector2, ConsolePixel>();
             for (int x = 0; x < xdim; x++)
