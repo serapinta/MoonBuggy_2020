@@ -23,12 +23,12 @@ namespace MoonBuggy_2020
         private Scene gameScene;
 
         // Program starts here
-        public static void Main(string[] args)
+        /*public static void Main(string[] args)
         {
             // Create a new small game and run it
             Game smallGame = new Game();
             smallGame.Run();
-        }
+        }*/
 
         private Game()
         {
