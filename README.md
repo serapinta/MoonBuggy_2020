@@ -40,10 +40,10 @@ cada salto efectuado.
 
 ## Diagrama UML 
 
-![UML](https://raw.githubusercontent.com/serapinta/MoonBuggy_2020/master/Imagens/UML_moonBuggy.png)
+![UML](https://github.com/serapinta/MoonBuggy_2020/blob/master/Imagens/UML_moonBuggy.png)
 
 ## Fluxograma
-![Fluxugrama](https://raw.githubusercontent.com/serapinta/MoonBuggy_2020/master/Imagens/Fluxograma_moonBuggy.png)
+![Fluxugrama](https://github.com/serapinta/MoonBuggy_2020/blob/master/Imagens/Fluxograma_moonBuggy.png)
 
 # Referências
 
