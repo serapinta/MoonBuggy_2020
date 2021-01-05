@@ -1,4 +1,6 @@
-﻿namespace MoonBuggy_2020
+﻿using System;
+
+namespace MoonBuggy_2020
 {
     class Program
     {
@@ -8,6 +10,8 @@
         /// <param name="args">call parameters</param>
         static void Main(string[] args)
         {
+            Console.WindowHeight = 30;
+            Console.WindowWidth = 150;
             Menu menu = new Menu();
             menu.DrawIntro();
         }
