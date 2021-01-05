@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Q3GquogoRSa3w30W0vHZo3xWSvygT2+ly4bj9CvVxLjck+8MkMHxQdcqzWbRqD3b3NhM+TOH8cWU67BfEp8zlg==",
+  "dgSpecHash": "wxvdSYhJnvuLvJ8VSwLT/SXrGxfZCo45junCQ1I79/f7efdsDAlfiAY90aGq1LnYc/zLgYAZPUdS4ZPLcQsd+A==",
   "success": true,
-  "projectFilePath": "C:\\Desktop\\universidade\\LP2\\MoonBuggy_2020\\MoonBuggy_2020.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\bolhas\\source\\repos\\2020_2021\\LP2\\MoonBuggy_2020\\MoonBuggy_2020.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\bolhas\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+  ],
   "logs": []
 }
