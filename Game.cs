@@ -5,7 +5,7 @@ using CoreGameEngine;
 
 namespace MoonBuggy_2020
 {
-    class Game
+   public class Game
     {
         // World dimensions
         int xdim = 200, ydim = 30;
@@ -16,15 +16,9 @@ namespace MoonBuggy_2020
         // The (only) game scene
         private Scene gameScene;
 
+        private int currentScore = 0;
 
-        public static void Main(string[] args)
-        {
-            // Create a new small game and run it
-            Game moonBuggy = new Game();
-            moonBuggy.Run();
-        }
-
-        private Game()
+        public Game()
         {
             // Create scene
             ConsoleKey[] quitKeys = new ConsoleKey[] { ConsoleKey.Escape };
@@ -33,7 +27,7 @@ namespace MoonBuggy_2020
                 new ConsoleRenderer(xdim, ydim, new ConsolePixel(' ')),
                 new CollisionHandler(xdim, ydim));
 
-            GameObject buggy = new GameObject("Player");
+            GameObject buggy = new GameObject("Buggy");
             KeyObserver playerKeyListener = new KeyObserver(new ConsoleKey[] {
                 ConsoleKey.Spacebar});
 
@@ -65,36 +59,40 @@ namespace MoonBuggy_2020
 
 
             // Create Hole Spawner
-            GameObject HoleSpawner = new GameObject("HoleSpawner");
-            HoleSpawner.AddComponent(new HoleSpawner(gameScene));
-            gameScene.AddGameObject(HoleSpawner);
+            GameObject holeSpawner = new GameObject("HoleSpawner");
+            holeSpawner.AddComponent(new HoleSpawner(gameScene));
+            gameScene.AddGameObject(holeSpawner);
 
 
-            // Create game object for showing date and time
-            GameObject dateGameObject = new GameObject("Time");
 
-            dateGameObject.AddComponent(new Position(xdim / 2 + 1, 0, 10));
-
-            RenderableStringComponent renderStringccomponentDate = new RenderableStringComponent(
-                () => DateTime.Now.ToString("F"),
+            GameObject score = new GameObject("Score");
+            score.AddComponent(new Position(1, 1, 10));
+            RenderableStringComponent rscPos = new RenderableStringComponent(
+                () => $"Score: {currentScore}",
                 i => new Vector2(i, 0),
-                ConsoleColor.DarkMagenta, ConsoleColor.White);
-
-            dateGameObject.AddComponent(renderStringccomponentDate);
-            gameScene.AddGameObject(dateGameObject);
+                ConsoleColor.White, ConsoleColor.DarkGray);
+            score.AddComponent(rscPos);
+            score.AddComponent(new CalculateScore(this, holeSpawner.GetComponent<HoleSpawner>().Holes));
+            gameScene.AddGameObject(score);
 
             // Create game object for showing position
             GameObject pos = new GameObject("Position");
             pos.AddComponent(new Position(1, 0, 10));
-            RenderableStringComponent rscPos = new RenderableStringComponent(
+            RenderableStringComponent renderableStringComponentPos = new RenderableStringComponent(
                 () => $"({playerPos.Pos.X}, {playerPos.Pos.Y})",
                 i => new Vector2(i, 0),
                 ConsoleColor.DarkMagenta, ConsoleColor.White);
-            pos.AddComponent(rscPos);
+            pos.AddComponent(renderableStringComponentPos);
             gameScene.AddGameObject(pos);
         }
 
-        private void Run()
+        public void AddScore()
+        {
+            currentScore += 5;
+        }
+
+
+        public void Run()
         {
             // Start game loop
             gameScene.GameLoop(frameLength);

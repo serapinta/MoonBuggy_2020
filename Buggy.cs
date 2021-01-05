@@ -93,6 +93,9 @@ namespace MoonBuggy_2020
         }
 
 
-        
+       public void Die()
+        {
+            ParentScene.Terminate();
+        } 
     }
 }

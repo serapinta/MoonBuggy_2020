@@ -65,7 +65,7 @@ namespace CoreGameEngine
         // Wait for thread reading the input to terminate
         public void StopReadingInput()
         {
-            inputThread.Join();
+            inputThread.Join(1000);
         }
 
         // Below are methods for registering and removing observers for this

@@ -11,7 +11,7 @@ namespace MoonBuggy_2020
 
         private Scene gameScene;
 
-        private List<GameObject> holes;
+        public List<GameObject> Holes { get; private set; }
 
         private int holeCounter;
 
@@ -20,12 +20,13 @@ namespace MoonBuggy_2020
 
         public HoleSpawner(Scene gameScene)
         {
-            this.gameScene = gameScene;
+            this.gameScene = gameScene; 
+            Holes = new List<GameObject>();
         }
 
         public override void Start()
         {
-            holes = new List<GameObject>();
+           
 
             holeCounter = 0;
             spawnDelay = 0;
@@ -48,10 +49,10 @@ namespace MoonBuggy_2020
                 GameObject hole = new GameObject($"Hole_{holeCounter}");
                 Position holePos = new Position(0f, 27f, 1f);
                 hole.AddComponent(holePos);
-                hole.AddComponent(new Hole());
+                hole.AddComponent(new Hole(gameScene.FindGameObjectByName("Buggy")));
                 hole.AddComponent(hole.GetComponent<Hole>().HoleSprite);
                 gameScene.AddGameObject(hole);
-                holes.Add(hole);
+                Holes.Add(hole);
 
                 holeCounter++;
 
@@ -74,12 +75,12 @@ namespace MoonBuggy_2020
 
         private void DestroyUnwantedHoles()
         {
-            for (int i = holes.Count - 1; i >= 0; i--)
+            for (int i = Holes.Count - 1; i >= 0; i--)
             {
-                if (holes[i].GetComponent<Position>().Pos.X >= gameScene.xdim - 1)
+                if (Holes[i].GetComponent<Position>().Pos.X >= gameScene.xdim - 1)
                 {
-                    gameScene.Destroy(holes[i]);
-                    holes.Remove(holes[i]);
+                    gameScene.Destroy(Holes[i]);
+                    Holes.Remove(Holes[i]);
                 }
             }
         }
