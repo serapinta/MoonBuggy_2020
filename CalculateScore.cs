@@ -2,6 +2,9 @@ using System.Collections.Generic;
 using CoreGameEngine;
 namespace MoonBuggy_2020
 {
+    /// <summary>
+    /// class responsible to read the scores and calculate them.
+    /// </summary>
     public class CalculateScore :Component
     {
         private List<GameObject> holes;

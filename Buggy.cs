@@ -3,10 +3,11 @@ using CoreGameEngine;
 
 namespace MoonBuggy_2020
 {
-    // A script which controls the player, implemented as a component
+  /// <summary>
+  ///   A script which controls the player, implemented as a component
+  /// </summary>
     public class Buggy : Component
     {
-        // Buggy script requries access to the key observer and position components
         private KeyObserver keyObserver;
         private Position position;
 

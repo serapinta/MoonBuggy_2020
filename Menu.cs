@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 
 namespace MoonBuggy_2020
 {
@@ -8,11 +7,7 @@ namespace MoonBuggy_2020
     /// </summary>
     public class Menu
     {
-        /// <summary>
-        /// Method that draws the Intro of the game
-        /// </summary>
-
-        public int LastScore{get; set;}
+        public int LastScore { get; set; }
 
         private Scores scores;
 
@@ -94,7 +89,7 @@ namespace MoonBuggy_2020
             }
             else if (key == ConsoleKey.D3 || key == ConsoleKey.NumPad3)
             {
-                  scores.CheckHighScore();
+                scores.CheckHighScore();
             }
             else if (key == ConsoleKey.D4 || key == ConsoleKey.NumPad4)
             {
@@ -131,7 +126,7 @@ namespace MoonBuggy_2020
 
         }
 
-     
+
         /// <summary>
         /// Method to give the information of who made the project
         /// </summary>

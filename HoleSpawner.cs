@@ -7,6 +7,10 @@ namespace MoonBuggy_2020
 {
     class HoleSpawner : Component
     {
+        /// <summary>
+        /// Generates the holes
+        /// </summary>
+        /// <returns></returns>
         Random holeChance = new Random();
 
         private Scene gameScene;

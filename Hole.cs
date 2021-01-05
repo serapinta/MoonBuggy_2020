@@ -7,6 +7,9 @@ namespace MoonBuggy_2020
 {
     public class Hole : Component
     {
+        /// <summary>
+        /// Holes objects
+        /// </summary>
 
         private Position position;
         private GameObject buggy;

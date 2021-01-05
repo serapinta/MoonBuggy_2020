@@ -5,6 +5,9 @@ using CoreGameEngine;
 
 namespace MoonBuggy_2020
 {
+    /// <summary>
+    /// class Game who contains all the game objects
+    /// </summary>
    public class Game
     {
         // World dimensions
