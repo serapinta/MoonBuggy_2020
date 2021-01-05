@@ -92,10 +92,11 @@ namespace MoonBuggy_2020
         }
 
 
-        public void Run()
+        public int Run()
         {
             // Start game loop
             gameScene.GameLoop(frameLength);
+            return currentScore;
         }
     }
 

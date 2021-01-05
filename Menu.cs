@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace MoonBuggy_2020
 {
@@ -10,6 +11,16 @@ namespace MoonBuggy_2020
         /// <summary>
         /// Method that draws the Intro of the game
         /// </summary>
+
+        public int LastScore{get; set;}
+
+        private Scores scores;
+
+        public Menu()
+        {
+            scores = new Scores(this);
+            LastScore = 0;
+        }
         public void DrawIntro()
         {
             do
@@ -73,7 +84,9 @@ namespace MoonBuggy_2020
             if (key == ConsoleKey.D1 || key == ConsoleKey.NumPad1)
             {
                 Game moonBuggy = new Game();
-                moonBuggy.Run();
+                LastScore = moonBuggy.Run();
+                scores.CheckHighScore();
+
             }
             else if (key == ConsoleKey.D2 || key == ConsoleKey.NumPad2)
             {
@@ -81,7 +94,7 @@ namespace MoonBuggy_2020
             }
             else if (key == ConsoleKey.D3 || key == ConsoleKey.NumPad3)
             {
-                Scores();
+                  scores.CheckHighScore();
             }
             else if (key == ConsoleKey.D4 || key == ConsoleKey.NumPad4)
             {
@@ -118,25 +131,7 @@ namespace MoonBuggy_2020
 
         }
 
-        /// <summary>
-        /// Method to give the best values of each game
-        /// </summary>
-        private void Scores()
-        {
-            do
-            {
-                Console.Clear();
-                Console.WriteLine("\n\n\n\n");
-                Console.WriteLine("\t\t\t\t\t\t\t╔ ========== HIGHSCORE ========== ╗");
-                Console.WriteLine();
-                Console.WriteLine("   ");
-                Console.WriteLine("\t\t\t\t\t\t\t      - Press ENTER to RETURN -");
-                Console.WriteLine("\t\t\t\t\t\t\t╚ =============================== ╝");
-            } while (Console.ReadKey().Key != ConsoleKey.Enter);
-
-
-        }
-
+     
         /// <summary>
         /// Method to give the information of who made the project
         /// </summary>

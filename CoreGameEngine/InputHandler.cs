@@ -13,11 +13,14 @@ namespace CoreGameEngine
 {
     // This class handle keyboard input, other objects can register themselves
     // as observers to listen to specific keys
+
+
     public class InputHandler : IObservable<ConsoleKey>
     {
         // Observers for specific keys
         private Dictionary<ConsoleKey, ICollection<IObserver<ConsoleKey>>>
             observers;
+        private bool stopThread = false;
 
         // The input thread
         private Thread inputThread;
@@ -53,7 +56,7 @@ namespace CoreGameEngine
                         observer.Notify(key);
                     }
                 }
-            } while (!quitKeys.Contains(key));
+            } while (!stopThread);
         }
 
         // Start thread which will read the input
@@ -65,7 +68,8 @@ namespace CoreGameEngine
         // Wait for thread reading the input to terminate
         public void StopReadingInput()
         {
-            inputThread.Join(1000);
+            stopThread = true;
+            inputThread.Join(10);
         }
 
         // Below are methods for registering and removing observers for this
