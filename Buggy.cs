@@ -10,7 +10,7 @@ namespace MoonBuggy_2020
         private KeyObserver keyObserver;
         private Position position;
 
-        private int jumpCounter = 5;
+        private float jumpCounter = 6;
         private bool isJumping;
         private bool isFalling;
 
@@ -75,10 +75,10 @@ namespace MoonBuggy_2020
                 y--;
                 jumpCounter--;
             }
-            else if (jumpCounter != 5 && isFalling)
+            else if (jumpCounter != 6 && isFalling)
             {
-                y++;
-                jumpCounter++;
+                y+=0.5f;
+                jumpCounter+=0.5f;
             }
 
             if (jumpCounter <= 0)
@@ -86,7 +86,7 @@ namespace MoonBuggy_2020
                 isJumping = false;
                 isFalling = true;
             }
-            else if (jumpCounter >= 5)
+            else if (jumpCounter >= 6)
             {
                 isFalling = false;
             }
