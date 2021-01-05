@@ -103,13 +103,13 @@ namespace MoonBuggy_2020
                 Console.WriteLine(" ╔ ================= INSTRUCTIONS =================== ╗");
                 Console.WriteLine();
                 Console.WriteLine("     The game objective is to make a good highscore");
-                Console.WriteLine("    by jumping with the car.");
+                Console.WriteLine("     by jumping with the car.");
                 Console.WriteLine("     Why jump? Well...The floor have spikes");
-                Console.WriteLine("    so be carefull!");
+                Console.WriteLine("     so be carefull!");
                 Console.WriteLine();
                 Console.WriteLine("    -> To Jump press space");
                 Console.WriteLine();
-                Console.WriteLine("                RETURN (Press Enter)");
+                Console.WriteLine("               - Press ENTER to RETURN - ");
                 Console.WriteLine(" ╚ ================================================== ╝");
             } while (Console.ReadKey().Key != ConsoleKey.Enter);
 
@@ -123,11 +123,11 @@ namespace MoonBuggy_2020
             do
             {
                 Console.Clear();
-                Console.WriteLine(" ╔ ======= HIGHSCORE ======= ╗");
+                Console.WriteLine(" ╔ =========== HIGHSCORE =========== ╗");
                 Console.WriteLine();
                 Console.WriteLine("   ");
-                Console.WriteLine("     RETURN (Press Enter)");
-                Console.WriteLine(" ╚ ========================= ╝");
+                Console.WriteLine("      - Press ENTER to RETURN -");
+                Console.WriteLine(" ╚ ================================= ╝");
             } while (Console.ReadKey().Key != ConsoleKey.Enter);
 
 
@@ -141,35 +141,17 @@ namespace MoonBuggy_2020
             do
             {
                 Console.Clear();
-                Console.WriteLine(" ╔ ========= CREDITS ========= ╗");
+                Console.WriteLine(" ╔ ========= CREDITS =========== ╗");
                 Console.WriteLine();
                 Console.WriteLine("             MADE BY");
                 Console.WriteLine();
                 Console.WriteLine("        ♦ PEDRO OLIVEIRA ♦");
                 Console.WriteLine("        ♦   SARA GAMA    ♦");
                 Console.WriteLine();
-                Console.WriteLine("      RETURN (Press Enter)");
-                Console.WriteLine(" ╚ =========================== ╝");
+                Console.WriteLine("     - Press ENTER to RETURN -");
+                Console.WriteLine(" ╚ ============================== ╝");
             } while (Console.ReadKey().Key != ConsoleKey.Enter);
         }
 
     }
 }
-
-/* // ╔ ═ ═ ╗
-     // ╚  ═  ╝
-
-   //CARRO ANDAR
-   Console.WriteLine("  .-`---`-_   - - - ♦");
-       Console.WriteLine("  '=0===0=-'");
-
-       //CARRO PARADO
-       Console.WriteLine("  .-`---`-_   - - -");
-       Console.WriteLine("  '=O===O=-'");
-
-       //CHAO / SPIKES
-       Console.WriteLine(" ========▲▲▲===");
-       Console.WriteLine(" ==============");
-
-       //INIMIGO alt + pad4 ♦
-       Console.WriteLine("♦");*/
