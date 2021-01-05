@@ -22,87 +22,72 @@ namespace MoonBuggy_2020
         // The (only) game scene
         private Scene gameScene;
 
-        // Program starts here
-        /*public static void Main(string[] args)
+
+        public static void Main(string[] args)
         {
             // Create a new small game and run it
-            Game smallGame = new Game();
-            smallGame.Run();
-        }*/
+            Game moonBuggy = new Game();
+            moonBuggy.Run();
+        }
 
         private Game()
         {
-
             // Create scene
             ConsoleKey[] quitKeys = new ConsoleKey[] { ConsoleKey.Escape };
             gameScene = new Scene(xdim, ydim,
                 new InputHandler(quitKeys),
-                new ConsoleRenderer(xdim, ydim, new ConsolePixel('.')),
+                new ConsoleRenderer(xdim, ydim, new ConsolePixel(' ')),
                 new CollisionHandler(xdim, ydim));
 
-            // Create quitter object
-            GameObject quitter = new GameObject("Quitter");
-            KeyObserver quitSceneKeyListener = new KeyObserver(new ConsoleKey[]
-                { ConsoleKey.Escape });
-            quitter.AddComponent(quitSceneKeyListener);
-            quitter.AddComponent(new Quitter());
-            gameScene.AddGameObject(quitter);
-
-            // Create player object
-            char[,] playerSprite =
-            {
-                     //    _.---.
-                     //   'O--O-'
-                { ' ','\''},
-                { '_','O'},
-                { '.','-'},
-                { '-','-'},
-                { '-','O'},
-                { '-','-'},
-                { '.','\''}
- 
-            };
-            GameObject player = new GameObject("Player");
+            GameObject buggy = new GameObject("Player");
             KeyObserver playerKeyListener = new KeyObserver(new ConsoleKey[] {
-                ConsoleKey.DownArrow,
-                ConsoleKey.UpArrow,
-                ConsoleKey.RightArrow,
-                ConsoleKey.LeftArrow});
-            player.AddComponent(playerKeyListener);
-            Position playerPos = new Position(150f, 25f, 0f);
-            player.AddComponent(playerPos);
-            player.AddComponent(new Player());
-            player.AddComponent(new ConsoleSprite(
-                playerSprite, ConsoleColor.Red, ConsoleColor.DarkGreen));
-            gameScene.AddGameObject(player);
+                ConsoleKey.Spacebar});
+
+            buggy.AddComponent(playerKeyListener);
+
+            Position playerPos = new Position(150f, 26f, 0f);
+            buggy.AddComponent(playerPos);
+            buggy.AddComponent(new Buggy());
+            buggy.AddComponent(buggy.GetComponent<Buggy>().BuggySprite);
+            gameScene.AddGameObject(buggy);
 
             // Create walls
-            GameObject walls = new GameObject("Walls");
+            GameObject ground = new GameObject("Ground");
+
             ConsolePixel wallPixel = new ConsolePixel(
-                '#', ConsoleColor.Blue,ConsoleColor.White);
+                '#', ConsoleColor.DarkGray, ConsoleColor.White);
             Dictionary<Vector2, ConsolePixel> wallPixels =
                 new Dictionary<Vector2, ConsolePixel>();
-            for (int x = 0; x < xdim; x++)
-                wallPixels[new Vector2(x, 0)] = wallPixel;
+
             for (int x = 0; x < xdim; x++)
                 wallPixels[new Vector2(x, ydim - 1)] = wallPixel;
-            for (int y = 0; y < ydim; y++)
-                wallPixels[new Vector2(0, y)] = wallPixel;
-            for (int y = 0; y < ydim; y++)
-                wallPixels[new Vector2(xdim - 1, y)] = wallPixel;
-            walls.AddComponent(new ConsoleSprite(wallPixels));
-            walls.AddComponent(new Position(0, 0, 1));
-            gameScene.AddGameObject(walls);
+
+            for (int x = 0; x < xdim; x++)
+                wallPixels[new Vector2(x, ydim - 2)] = wallPixel;
+
+            ground.AddComponent(new ConsoleSprite(wallPixels));
+            ground.AddComponent(new Position(0, 0, 1));
+            gameScene.AddGameObject(ground);
+
+
+            // Create Hole Spawner
+            GameObject HoleSpawner = new GameObject("HoleSpawner");
+            HoleSpawner.AddComponent(new HoleSpawner(gameScene));
+            gameScene.AddGameObject(HoleSpawner);
+
 
             // Create game object for showing date and time
-            GameObject dtGameObj = new GameObject("Time");
-            dtGameObj.AddComponent(new Position(xdim / 2 + 1, 0, 10));
-            RenderableStringComponent rscDT = new RenderableStringComponent(
+            GameObject dateGameObject = new GameObject("Time");
+
+            dateGameObject.AddComponent(new Position(xdim / 2 + 1, 0, 10));
+
+            RenderableStringComponent renderStringccomponentDate = new RenderableStringComponent(
                 () => DateTime.Now.ToString("F"),
                 i => new Vector2(i, 0),
                 ConsoleColor.DarkMagenta, ConsoleColor.White);
-            dtGameObj.AddComponent(rscDT);
-            gameScene.AddGameObject(dtGameObj);
+
+            dateGameObject.AddComponent(renderStringccomponentDate);
+            gameScene.AddGameObject(dateGameObject);
 
             // Create game object for showing position
             GameObject pos = new GameObject("Position");
@@ -113,7 +98,6 @@ namespace MoonBuggy_2020
                 ConsoleColor.DarkMagenta, ConsoleColor.White);
             pos.AddComponent(rscPos);
             gameScene.AddGameObject(pos);
-
         }
 
         private void Run()
