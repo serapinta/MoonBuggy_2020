@@ -51,14 +51,14 @@ namespace MoonBuggy_2020
         {
             Console.Clear();
             Console.WriteLine("\n\n\n\n");
-            Console.WriteLine("\t\t\t\t\t\t\t ╔ ========== MENU ========== ╗");
+            Console.WriteLine("\t\t\t\t\t\t\t  ╔ ========== MENU ========== ╗");
             Console.WriteLine();
-            Console.WriteLine("\t\t\t\t\t\t\t       1. START");
-            Console.WriteLine("\t\t\t\t\t\t\t       2. INSTRUCTION");
-            Console.WriteLine("\t\t\t\t\t\t\t       3. HIGHSCORE");
-            Console.WriteLine("\t\t\t\t\t\t\t       4. CREDITS");
-            Console.WriteLine("\t\t\t\t\t\t\t       5. EXIT");
-            Console.WriteLine("\t\t\t\t\t\t\t ╚ ========================== ╝");
+            Console.WriteLine("\t\t\t\t\t\t\t        1. START");
+            Console.WriteLine("\t\t\t\t\t\t\t        2. INSTRUCTION");
+            Console.WriteLine("\t\t\t\t\t\t\t        3. HIGHSCORE");
+            Console.WriteLine("\t\t\t\t\t\t\t        4. CREDITS");
+            Console.WriteLine("\t\t\t\t\t\t\t        5. EXIT");
+            Console.WriteLine("\t\t\t\t\t\t\t  ╚ ========================== ╝");
 
             MenuInput(Console.ReadKey().Key);
         }
@@ -145,15 +145,15 @@ namespace MoonBuggy_2020
             {
                 Console.Clear();
                 Console.WriteLine("\n\n\n\n");
-                Console.WriteLine("\t\t\t\t\t\t\t╔ ========== CREDITS ========== ╗");
+                Console.WriteLine("\t\t\t\t\t\t\t ╔ ========== CREDITS ========== ╗");
                 Console.WriteLine();
-                Console.WriteLine("\t\t\t\t\t\t\t             MADE BY");
+                Console.WriteLine("\t\t\t\t\t\t\t              MADE BY");
                 Console.WriteLine();
-                Console.WriteLine("\t\t\t\t\t\t\t        ♦ PEDRO OLIVEIRA ♦");
-                Console.WriteLine("\t\t\t\t\t\t\t        ♦   SARA GAMA    ♦");
+                Console.WriteLine("\t\t\t\t\t\t\t         ♦ PEDRO OLIVEIRA ♦");
+                Console.WriteLine("\t\t\t\t\t\t\t         ♦   SARA GAMA    ♦");
                 Console.WriteLine();
-                Console.WriteLine("\t\t\t\t\t\t\t    - Press ENTER to RETURN -");
-                Console.WriteLine("\t\t\t\t\t\t\t╚ ============================== ╝");
+                Console.WriteLine("\t\t\t\t\t\t\t     - Press ENTER to RETURN -");
+                Console.WriteLine("\t\t\t\t\t\t\t ╚ ============================== ╝");
             } while (Console.ReadKey().Key != ConsoleKey.Enter);
         }
 
