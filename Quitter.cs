@@ -3,8 +3,11 @@ using CoreGameEngine;
 
 namespace MoonBuggy_2020
 {
-    // Simple component which listens for the escape key and terminates the
-    // parent scene
+    /// <summary>
+    /// Simple component which listens for the escape key and terminates the
+    /// parent scene.
+    /// </summary>
+      
     public class Quitter : Component
     {
         private KeyObserver keyObserver;
@@ -18,7 +21,6 @@ namespace MoonBuggy_2020
             {
                 if (key == ConsoleKey.Escape)
                 {
-                    Console.WriteLine("Bye :(");
                     ParentScene.Terminate();
                 }
             }
