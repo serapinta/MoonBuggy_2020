@@ -42,7 +42,7 @@ creditos. O jogo em si é realizado apartir da classe
 
 ## Diagrama UML 
 
-![UML]()
+![UML](https://github.com/serapinta/MoonBuggy_2020/blob/master/Imagens/uml.png)
 
 ## Fluxograma
 ![Fluxugrama](https://github.com/serapinta/MoonBuggy_2020/blob/master/Imagens/Fluxograma_moonBuggy.png)
