@@ -1,12 +1,8 @@
-/* This Source Code Form is subject to the terms of the Mozilla Public
- * License, v. 2.0. If a copy of the MPL was not distributed with this
- * file, You can obtain one at http://mozilla.org/MPL/2.0/.
- *
- * Author: Nuno Fachada
- * */
+
 using System;
 using System.Threading;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CoreGameEngine
 {
@@ -52,6 +48,13 @@ namespace CoreGameEngine
             gameObjects.Add(gameObject.Name, gameObject);
         }
 
+
+        // Destroy a game object to this scene
+        public void Destroy(GameObject gameObject)
+        {
+            gameObjects.Remove(gameObject.Name);
+        }
+
         // Find a game object by name in this scene
         public GameObject FindGameObjectByName(string name)
         {
@@ -68,7 +71,7 @@ namespace CoreGameEngine
         public void GameLoop(int msFramesPerSecond)
         {
             // Initialize all game objects
-            foreach (GameObject gameObject in gameObjects.Values)
+            foreach (GameObject gameObject in (gameObjects.Values).ToList())
             {
                 gameObject.Start();
             }
@@ -89,16 +92,16 @@ namespace CoreGameEngine
                 long start = DateTime.Now.Ticks;
 
                 // Update game objects
-                foreach (GameObject gameObject in gameObjects.Values)
+                foreach (GameObject gameObject in (gameObjects.Values).ToList())
                 {
                     gameObject.Update();
                 }
 
                 // Update collision information
-                collisionHandler.Update(gameObjects.Values);
+                collisionHandler.Update((gameObjects.Values).ToList());
 
                 // Render current frame
-                renderer?.Render(gameObjects.Values);
+                renderer?.Render((gameObjects.Values).ToList());
 
                 // Time to wait until next frame
                 timeToWait = (int)(start / TimeSpan.TicksPerMillisecond
@@ -118,7 +121,7 @@ namespace CoreGameEngine
             inputHandler.StopReadingInput();
 
             // Teardown the game objects in this scene
-            foreach (GameObject gameObject in gameObjects.Values)
+            foreach (GameObject gameObject in (gameObjects.Values).ToList())
             {
                 gameObject.Finish();
             }

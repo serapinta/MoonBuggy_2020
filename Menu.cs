@@ -72,7 +72,8 @@ namespace MoonBuggy_2020
             // Start the game
             if (key == ConsoleKey.D1 || key == ConsoleKey.NumPad1)
             {
-
+                Game moonBuggy = new Game();
+                moonBuggy.Run();
             }
             else if (key == ConsoleKey.D2 || key == ConsoleKey.NumPad2)
             {

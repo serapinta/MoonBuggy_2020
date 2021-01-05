@@ -1,5 +1,4 @@
 // using System.IO;
-
 // namespace MoonBuggy_2020
 // {
 //     /// <summary>
@@ -14,7 +13,6 @@
 //             text.Close();
 //             return Text;
 //         }
-
 //         /// <summary>
 //         /// Method to save the best leaderboard
 //         /// </summary>
