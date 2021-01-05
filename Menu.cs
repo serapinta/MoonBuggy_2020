@@ -15,6 +15,7 @@ namespace MoonBuggy_2020
             do
             {
                 Console.Clear();
+                Console.WriteLine("\n");
                 Console.WriteLine("  W       W  EEEEEEE L        CCCCC     OOOOO   MM     MM  EEEEEEE");
                 Console.WriteLine("  W   W   W  E       L       C         O     O  M M   M M  E ");
                 Console.WriteLine("  W  W W  W  EEEEE   L      C         O       O M  M M  M  EEEEE");
@@ -49,14 +50,14 @@ namespace MoonBuggy_2020
         private void DrawMenu()
         {
             Console.Clear();
-            Console.WriteLine(" ╔ ==== MENU ==== ╗");
+            Console.WriteLine(" ╔ ======== MENU ======== ╗");
             Console.WriteLine();
-            Console.WriteLine("  1. START");
-            Console.WriteLine("  2. INSTRUCTION");
-            Console.WriteLine("  3. HIGHSCORE");
-            Console.WriteLine("  4. CREDITS");
-            Console.WriteLine("  5. EXIT");
-            Console.WriteLine(" ╚ ============== ╝");
+            Console.WriteLine("      1. START");
+            Console.WriteLine("      2. INSTRUCTION");
+            Console.WriteLine("      3. HIGHSCORE");
+            Console.WriteLine("      4. CREDITS");
+            Console.WriteLine("      5. EXIT");
+            Console.WriteLine(" ╚ ====================== ╝");
 
             MenuInput(Console.ReadKey().Key);
         }
@@ -99,15 +100,17 @@ namespace MoonBuggy_2020
             do
             {
                 Console.Clear();
-                Console.WriteLine(" ╔ ==== INSTRUCTIONS ==== ╗");
+                Console.WriteLine(" ╔ ================= INSTRUCTIONS =================== ╗");
                 Console.WriteLine();
-                Console.WriteLine("   ");
-                Console.WriteLine("   ");
-                Console.WriteLine("  ");
-                Console.WriteLine("   ");
-                Console.WriteLine("  RETURN (Press Enter)");
+                Console.WriteLine("     The game objective is to make a good highscore");
+                Console.WriteLine("    by jumping with the car.");
+                Console.WriteLine("     Why jump? Well...The floor have spikes");
+                Console.WriteLine("    so be carefull!");
                 Console.WriteLine();
-                Console.WriteLine(" ╚ ====================== ╝");
+                Console.WriteLine("    -> To Jump press space");
+                Console.WriteLine();
+                Console.WriteLine("                RETURN (Press Enter)");
+                Console.WriteLine(" ╚ ================================================== ╝");
             } while (Console.ReadKey().Key != ConsoleKey.Enter);
 
         }
@@ -120,12 +123,11 @@ namespace MoonBuggy_2020
             do
             {
                 Console.Clear();
-                Console.WriteLine(" ╔ ==== HIGHSCORE ==== ╗");
+                Console.WriteLine(" ╔ ======= HIGHSCORE ======= ╗");
                 Console.WriteLine();
                 Console.WriteLine("   ");
-                Console.WriteLine("  RETURN (Press Enter)");
-                Console.WriteLine();
-                Console.WriteLine(" ╚ =================== ╝");
+                Console.WriteLine("     RETURN (Press Enter)");
+                Console.WriteLine(" ╚ ========================= ╝");
             } while (Console.ReadKey().Key != ConsoleKey.Enter);
 
 
@@ -139,16 +141,15 @@ namespace MoonBuggy_2020
             do
             {
                 Console.Clear();
-                Console.WriteLine(" ╔ ==== CREDITS ==== ╗");
+                Console.WriteLine(" ╔ ========= CREDITS ========= ╗");
                 Console.WriteLine();
-                Console.WriteLine("      MADE BY");
+                Console.WriteLine("             MADE BY");
                 Console.WriteLine();
-                Console.WriteLine(" ♦ PEDRO OLIVEIRA ♦");
-                Console.WriteLine(" ♦   SARA GAMA    ♦");
+                Console.WriteLine("        ♦ PEDRO OLIVEIRA ♦");
+                Console.WriteLine("        ♦   SARA GAMA    ♦");
                 Console.WriteLine();
-                Console.WriteLine("  RETURN (Press Enter)");
-                Console.WriteLine();
-                Console.WriteLine(" ╚ ================ ╝");
+                Console.WriteLine("      RETURN (Press Enter)");
+                Console.WriteLine(" ╚ =========================== ╝");
             } while (Console.ReadKey().Key != ConsoleKey.Enter);
         }
 
